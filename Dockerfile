@@ -1,9 +1,11 @@
 FROM node:lts
 
-WORKDIR /app
-COPY . /app
+WORKDIR /app/
+ADD package.json .
 
 RUN npm install
 RUN npm install nodemon -g
 
-CMD ["nodemon"]
+ADD . .
+
+CMD [ "nodemon" ]
